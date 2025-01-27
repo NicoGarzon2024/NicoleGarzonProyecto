@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Logout{% endblock %}
+{% block content %}
+<br>
+<br>
+<h1 class="animate__animated animate__bounce color_titulo">Usuario {{nombrecompleto}} ha cerrado sesión, hasta la próxima</h1>
+<h2 class="color_titulo" id="countdown"></h2>
+<script>
+    window.onload = updateClock;
+
+    var totalTime = 5;
+
+    function updateClock() {
+        document.getElementById('countdown').innerHTML = 'Redirigiendo al login en ' + totalTime;
+        if(totalTime === 1)
+        {
+            window.location.href = "/login";  // Redirige a la página de login cuando el contador llegue a 0
+        } 
+        else 
+        {
+            totalTime -= 1;
+            setTimeout(updateClock, 1000);
+        }
+    }
+</script>
+{% endblock %}
