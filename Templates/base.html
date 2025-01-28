@@ -19,6 +19,10 @@
         body {
         font-family: 'Roboto', sans-serif;
         background-color: #c8a2c8;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
         }
         .bd-placeholder-img {
         font-size: 1.125rem;
@@ -68,20 +72,35 @@
             background-color: #ad30ad;
         }
 
-        th, td {
-    border: 1px solid #e6bbbb; /* Asegúrate de que los bordes coincidan con el fondo */
-    padding: 8px; /* Espaciado interno */
-}
+        th, td 
+        {
+            border: 1px solid #e6bbbb; /* Asegúrate de que los bordes coincidan con el fondo */
+            padding: 8px; /* Espaciado interno */
+    }
+    footer
+    {
+        background: #690269;
+    }
 
+    .container {
+        flex-grow: 1;
+        padding-bottom: 80px; /* Espacio para el footer */
+    }
 
-
-    </style>
+</style>
     {% block head %}
     {% endblock %}
 </head>
 <body class="text-center">
     {% block content %}
     {% endblock %}
+
+    <footer class="text-center text-lg-start fixed-bottom">
+        <div class="text-center text-white p-3">
+            © 2025 Copyright:
+            <a class="text-white" href="https://ug.edu.ec/">Nicole Garzón</a>
+        </div>
+    </footer>
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 

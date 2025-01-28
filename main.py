@@ -104,6 +104,11 @@ def login():
             acceso=False 
     return render_template('login.html', sesion_iniciada=acceso)
 
+@app.route("/cv")
+@login_required
+def cv():
+    return render_template('cv.html',nombreusuario= current_user)
+
 
 @app.route("/logout")
 def logout():
